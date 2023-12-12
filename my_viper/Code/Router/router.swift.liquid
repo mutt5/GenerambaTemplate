@@ -11,6 +11,7 @@ import SwiftUI
 
 class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
     
+    // {{ module_info.name }}のviewを返すrouterに記述するコード
     func assembleModule() -> some View {
         // 必要な依存関係を作成
         let router = {{ module_info.name }}Router()
