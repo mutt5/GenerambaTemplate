@@ -1,0 +1,22 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+import SwiftUI
+
+struct {{ module_info.name }}View<Presentation: {{ module_info.name }}Presentation>: View {
+    @ObservedObject var presenter: Presentation
+    
+    var body: some View {
+    }
+}
+
+
+#Preview {
+    {{ module_info.name }}View(presenter: {{ module_info.name }}PresenterMock())
+}

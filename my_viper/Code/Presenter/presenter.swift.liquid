@@ -8,10 +8,17 @@
 
 class {{ module_info.name }}Presenter: {{ module_info.name }}Presentation {
     
-    weak var view: {{ module_info.name }}View?
-    var interactor: {{ module_info.name }}UseCase!
-    var router: {{ module_info.name }}Wireframe!
+    private let dependency: Dependency
+
+    struct Dependency {
+        let router: {{ module_info.name }}Wireframe
+        let interactor: {{ module_info.name }}Interactor
+    }
+    
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
 }
 
-extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutput {
-}
+
+class {{ module_info.name }}PresenterMock: {{ module_info.name }}Presentation {}

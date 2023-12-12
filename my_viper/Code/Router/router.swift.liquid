@@ -8,24 +8,23 @@
 
 class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
     
-    weak var viewController: UIViewController?
-    
-    static func assembleModule() -> UIViewController {
-        let view = {{ module_info.name }}ViewController.instantiate()
-        let presenter = {{ module_info.name }}Presenter()
-        let interactor = {{ module_info.name }}Interactor()
+    func assembleModule() -> some View {
+        // 必要な依存関係を作成
         let router = {{ module_info.name }}Router()
-	
-        view.presenter = presenter
-	
-        presenter.view = view
-        presenter.interactor = interactor
-        presenter.router = router
-	
-        interactor.output = presenter
-	
-        router.viewController = view
-	
+        let interactor = {{ module_info.name }}Interactor()
+
+        // Presenterの依存関係を構築
+        let dependency = {{ module_info.name }}Presenter.Dependency(
+            router: router,
+            interactor: interactor,
+        )
+
+        // Presenterを初期化
+        let presenter = {{ module_info.name }}Presenter(dependency: dependency)
+
+        // Viewを初期化し、Presenterを注入
+        let view = {{ module_info.name }}View(presenter: presenter)
+
         return view
     }
 }
