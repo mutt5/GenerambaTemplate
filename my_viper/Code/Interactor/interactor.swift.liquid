@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class {{ module_info.name }}Interactor: UseCase {
+    typealias Parameters = Void
+    typealias Success = String
+    typealias Failure = Error
+
+    func execute(_ parameters: Parameters) async throws -> Success {
+        return "sample"
+    }
+
+    func cancel() {
+    }
+}

@@ -6,6 +6,9 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
+import Foundation
+import SwiftUI
+
 class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
     
     func assembleModule() -> some View {
@@ -16,7 +19,7 @@ class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
         // Presenterの依存関係を構築
         let dependency = {{ module_info.name }}Presenter.Dependency(
             router: router,
-            interactor: interactor,
+            interactor: interactor
         )
 
         // Presenterを初期化
