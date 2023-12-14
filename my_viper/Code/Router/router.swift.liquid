@@ -12,7 +12,8 @@ import SwiftUI
 class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
     
     // {{ module_info.name }}のviewを返すrouterに記述するコード
-    func assembleModule() -> some View {
+    // ここに記述するコードではない
+    func assembleModule() -> AnyView {
         // 必要な依存関係を作成
         let router = {{ module_info.name }}Router()
         let interactor = {{ module_info.name }}Interactor()
@@ -29,6 +30,6 @@ class {{ module_info.name }}Router: {{ module_info.name }}Wireframe {
         // Viewを初期化し、Presenterを注入
         let view = {{ module_info.name }}View(presenter: presenter)
 
-        return view
+        return AnyView(view)
     }
 }

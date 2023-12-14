@@ -8,6 +8,10 @@
 
 import Foundation
 
-protocol {{ module_info.name }}Presentation: ObservableObject {}
+protocol {{ module_info.name }}Presentation: ObservableObject {
+    func createView() -> AnyView
+}
 
-protocol {{ module_info.name }}Wireframe: AnyObject {}
+protocol {{ module_info.name }}Wireframe: AnyObject {
+    func assembleModule() -> AnyView
+}

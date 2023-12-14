@@ -18,7 +18,15 @@ class {{ module_info.name }}Presenter: {{ module_info.name }}Presentation {
     init(dependency: Dependency) {
         self.dependency = dependency
     }
+
+    func createView() -> AnyView {
+        return AnyView(dependency.router.assembleModule())
+    }
 }
 
 
-class {{ module_info.name }}PresenterMock: {{ module_info.name }}Presentation {}
+class {{ module_info.name }}PresenterMock: {{ module_info.name }}Presentation {
+    func createView() -> AnyView {
+        return AnyView(Text("sample"))
+    }
+}
