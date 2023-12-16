@@ -1,7 +1,7 @@
 # Template information section
-name: "my_viper"
-summary: "from article sample"
-author: "Yuta Kawabe"
+name: "SwiftUI_VIPER"
+summary: ""
+author: "fujiwara"
 version: "0.1.0"
 license: "MIT"
 
