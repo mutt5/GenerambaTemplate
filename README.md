@@ -7,7 +7,7 @@
 catalogs:
 - 'https://github.com/mutt5/GenerambaTemplate'
 templates:
-- {name: my_viper}
+- {name: SwiftUI_VIPER}
 ```
 
 3) `generamba template install`でテンプレートを導入
