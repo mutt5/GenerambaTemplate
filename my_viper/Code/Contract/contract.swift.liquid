@@ -9,10 +9,6 @@
 import Foundation
 import SwiftUI
 
-protocol {{ module_info.name }}Presentation: ObservableObject {
-    func createView() -> AnyView
-}
+protocol {{ module_info.name }}Presentation: ObservableObject {}
 
-protocol {{ module_info.name }}Wireframe: AnyObject {
-    func assembleModule() -> AnyView
-}
+protocol {{ module_info.name }}Wireframe: AnyObject {}
